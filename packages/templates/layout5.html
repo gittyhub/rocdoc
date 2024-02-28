@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags For Bootstrap a front end toolkit-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+  <body>
+    <br>
+    <h1>Welcome to DocReview</h1><br>
+    Enter the names of the doctors you want to review.<br> 
+    Separate each doctor's name using a commas.<br>
+    Maximum of 3 doctors per search.<br>
+    <br>
+    <form action="get_doc" method="post">
+      Doctor: <input type = "text" name="doc_input">
+      <input type="submit" value="Get Doctor Ratings">
+    <br>
+    <br>
+    </form> 
+    <table class="table">
+      {% for table in docF %}
+        <!-- 
+        {{titles[loop.index]}}
+        {{table|safe}}
+        -->
+	<tr> 
+	  <td>{{ table | safe }} </td>
+	</tr>
+      {% endfor %}
+    </table>
+    <sub>***Zero reaturn rating mean no results were found</sub><br> 
+    <sub>***Ratings are rounded up</sub> 
+  </body>
+</html> 
+

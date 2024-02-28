@@ -1,0 +1,12 @@
+{% extends "layout.html" %}   
+{% block content %}
+  <table class="table">
+    {% for table in docF %}
+      <tr> 
+        <td>{{ table | safe }} </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <sub>***Zero rating mean no results were found</sub><br> 
+  <sub>***Ratings are rounded </sub> 
+{% endblock content %}

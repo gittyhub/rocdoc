@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Welcom to DocReview</h1>
+    Enter the names of the doctors you want to review.<br> 
+    Separate each doctor's name using a commas.<br>
+    Maximum of 3 doctors per search.<br>
+    <br>
+    <form action="get_doc" method="post">
+      Doctor <input type = "text" name="doc_input">
+      <input type="submit" value="Get Doctor Ratings">
+    </form> 
+    <br>
+    {% for table in docF %}
+      <!-- 
+      {{titles[loop.index]}}
+      {{table|safe}}
+      -->
+      {{ table | safe }}
+    {% endfor %}
+    <br>
+    <sub>***Zero reaturn rating mean no results were found</sub><br> 
+    <sub>***Ratings are rounded up</sub> 
+  </body>
+</html> 
+
